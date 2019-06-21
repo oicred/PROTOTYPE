@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Proof your Solvency ¦ Demo</title>
+  <meta name="description" content="SBHACK Demo">
+  <meta name="author" content="SitePoint">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./vendor/skeleton/normalize.css">
+  <link rel="stylesheet" href="./vendor/skeleton/skeleton.css">
+  <link rel="stylesheet" href="./css/main.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- JavaScript -->
+  <script src="./js/main.js"></script>
+  <script src="./js/proto.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-brand">
+        <!--<i id="pyr-brand" class="large material-icons">device_hub</i>-->
+        <p class="header-title">Proof your Solvency</p>
+      </div>
+      <nav class="header-nav-bar">
+        <ul class="header-nav-bar-ul">
+          <li><a href="./index.html">User Interaction</a></li>
+          <!--<li><p onclick="smoothScroll(document.getElementById('proof-of-solvency'))">Proof of Solvency</p></li>-->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Proof of Solvency -->
+  <div class="body-div-proof" id="exchange-proof-liabilities">
+    <div class="container" id="exchange-proof-liabilities-row-1">
+      <h2>Proof of Solvency</h2>
+      <div class="row">
+        <div class="eight columns">
+          <h5>Formular</h5>
+          <form name="exchange-proof-liabilities-form" submit="return makeSearch()">
+            <input type="file" id="exchange-proof-liabilities-fileUpload" />
+            <input type="button" id="exchange-proof-liabilities-upload" value="Upload" onclick="Upload()" />
+            <input type="submit" name="exchange-proof-liabilities-submit" value="submit" class="submit-button"/>
+          </form>
+        </div>
+        <div class="four columns">
+          <h5>Description</h5>
+          <p>What ist Proof of solvency all about bla bla</p>
+        </div>
+      </div>
+      <div class="row" id="proof-of-solvency-row-1">
+        <div class="twelve columns">
+          <div class="slider">
+          <h5>Response</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Demonstration "Proof Your Reserves" (@SBHACK19)</p>
+  </div>
+
+</body>
+
+</html>
