@@ -1,7 +1,7 @@
 function Upload() {
     //Reference the FileUpload element.
     alert("this is a test");
-    var fileUpload = document.getElementById("fileUpload");
+    var fileUpload = document.getElementById("exchange-proof-liabilities-fileUpload");
 
     //Validate whether File is valid Excel file.
     var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.xls|.xlsx)$/;
@@ -12,7 +12,7 @@ function Upload() {
             //For Browsers other than IE.
             if (reader.readAsBinaryString) {
                 reader.onload = function (e) {
-                    ProcessExcel(e.target.result);                  
+                    ProcessExcel(e.target.result);
                 };
                 reader.readAsBinaryString(fileUpload.files[0]);
             } else {
