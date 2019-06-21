@@ -142,4 +142,29 @@ console.log(merkleTools.validateProof(proof0, targetHash, merkleRoot));
     //test get values
     //console.log(db.all('SELECT * FROM hashes'));
 console.log('test 4');
+Test(sha256(entries[0]));
 });
+
+function Test(hashcheck) {
+  var dbentries = [];
+  console.log(hashcheck);
+  console.log('I am inside test');
+  const sqlite3 = require('sqlite3').verbose();
+ 
+// open the database
+let db = new sqlite3.Database('sample.db');
+ 
+let sql = `SELECT * FROM hashes`;
+ 
+db.all(sql, [], (err, rows) => {
+  if (err) {
+    throw err;
+  }
+  rows.forEach((row) => {
+    console.log(row);
+  });
+});
+ 
+// close the database connection
+db.close();
+};
