@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 // required to save it in a DB
 var sqlite3 = require('sqlite3');
-var db = new sqlite3.Database('db/hash.db'); 
+//var db = new sqlite3.Database('hash.db'); 
 // required to build the Merkle tree
 var MerkleTools = require('merkle-tools');
 var merkleTools = new MerkleTools();
@@ -107,14 +107,37 @@ console.log(merkleTools.validateProof(proof0, targetHash, merkleRoot));
 //storing the hash values in the DB
     //create table
     console.log('test 1');
-    db.run('CREATE TABLE hashes (test INTEGER, hash TEXT)');
+   // db.run('CREATE TABLE hashes (position INTEGER, hash VARCHAR)');
     console.log('test 2');
-    db.run('commit');
+  //  db.run('commit');
     //insert values
-    for (var i = 0; i < entries.length; i++) {
-        var query = 'INSERT INTO hashes VALUES ('+i+',"'+sha256(entries[i])+'")';
-        db.run(query);
+   // for (var i = 0; i < entries.length; i++) {
+    //    var query = 'INSERT INTO hashes VALUES ('+i+',"'+sha256(entries[i])+'")';
+    //    db.run(query);
+    //}
+    	
+
+  const sqlite3 = require('sqlite3').verbose();
+ 
+  let db = new sqlite3.Database('sample.db');
+
+  // insert one row into the langs table
+  for (var i = 0; i < entries.length; i++) {
+  var row = [i, sha256(entries[i])];    
+  db.run(`INSERT INTO hashes VALUES(?, ?)`, row, function(err) {
+    if (err) {
+      return console.log(err.message);
     }
+    // get the last insert id
+    console.log(`A row has been inserted with rowid ${this.lastID}`);
+  });
+  }
+ 
+
+ 
+  // close the database connection
+  db.close();
+
    console.log('test 3');
     //test get values
     //console.log(db.all('SELECT * FROM hashes'));
