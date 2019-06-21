@@ -18,6 +18,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
+
 <body>
 
   <!-- JavaScript -->
@@ -47,10 +48,10 @@
         <div class="eight columns">
           <h5>Formular</h5>
           <form name="user-proof-solvency" submit="return makeSearch()">
-            Account (Email): <input name="proof-of-solvency-user-entity" type="email">
-            Amount (BTC): <input name="proof-of-solvency-user-amount" type="number">
+            Account (Email): <input name="proof-of-solvency-user-entity" type="email" required>
+            Amount (BTC): <input name="proof-of-solvency-user-amount" type="number" required>
             <!-- Timestamp is queued? -->
-            <input type="submit" name="proof-of-solvency-submit" value="submit" />
+            <input type="submit" name="proof-of-solvency-submit" value="submit" onclick="collectInput()"/>
           </form>
         </div>
         <div class="four columns">
@@ -61,7 +62,7 @@
       <div class="row" id="proof-of-solvency-row-1">
         <div class="twelve columns">
           <div class="slider">
-          <h5>Response</h5>
+            <h5>Response</h5>
           </div>
         </div>
       </div>
@@ -73,7 +74,6 @@
   <div class="footer">
     <p>Demonstration "Proof Your Reserves" (@SBHACK19)</p>
   </div>
-
 </body>
 
 </html>
